@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            color: #272727;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 100px 0;
+            text-align: center; 
+        }
+
+        .login-form input {
+            width: 85%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .login-form .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .login-form .password-wrapper input {
+            width: 100%;
+        }
+
+        .login-form .password-wrapper .toggle-password {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            cursor: pointer;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-form button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <form action="/login" method="post">
+            <label for="username">Логин:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Пароль:</label><br>
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password">
+                <span class="toggle-password">&#x1f441;</span> 
+            </div>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.toggle-password').addEventListener('click', function(e) {
+            var passwordInput = document.querySelector('#password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
+</body>
+</html>
